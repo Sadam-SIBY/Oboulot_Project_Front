@@ -1,0 +1,125 @@
+@use '../../../src/styles/variables.scss' as v;
+
+.chat {
+  width: 80vw;
+  margin: 0 auto;
+  border: 2px solid #2756A2;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 3px #2756A2;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+  &-lists {
+    width: 100%;
+    height: 400px;
+    border-bottom: 2px solid #2756A2;
+
+    display: flex;
+
+    & .contact {
+      width: 30%;
+      border-right: 2px solid #2756A2;
+      overflow: auto;
+
+      &-header {
+        width: 100%;
+        background-color: v.$background;
+        border-radius: 0.5rem 0 0 0;
+        border-bottom: 1px solid #C6CBD9;
+        color: v.$primary;
+        font-weight: v.$font-title-weight;
+        padding: 0.75rem;
+        position: relative;
+      }
+
+      &-info {
+        height: 3rem;
+        border-bottom: 1px solid v.$secondary;
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+      }
+    }
+
+    .messagelist {
+      width: 70%;
+
+      &-header {
+        width: 100%;
+        background-color: v.$primary;
+        color: v.$background;
+        font-weight: v.$font-title-weight;
+        padding: 0.75rem;
+        position: relative;
+      }
+
+      &-list {
+        height: 86%;
+        padding: 1.5rem;
+        overflow: auto;
+        gap: 2rem;
+      }
+
+      &-message {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        gap: 0.5rem;
+        padding: 0.3rem 0;
+      }
+
+      &-section {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      &-picture {
+        width: 30px;
+      }
+
+      &-bubble {
+        position: relative;
+        background-color: v.$secondary;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+      }
+
+      &-bubble::before {
+        content: '';
+        border: solid transparent;
+        border-width: 7px;
+        border-bottom-color: v.$secondary;
+        margin-top: -13px;
+        position: absolute;
+        top: 0;
+        right: 7px;
+      }
+    }
+  }
+}
+
+.form-message {
+  width: 70%;
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+
+  &-input {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+
+    &:focus {
+      outline-color: #2756A2;
+    }
+  }
+
+  &-button {
+    margin: 0;
+  }
+}

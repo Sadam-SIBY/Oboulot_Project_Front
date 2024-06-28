@@ -1,0 +1,198 @@
+.wrapper {
+  max-width: 90%;
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+.container__with-editMode {
+  min-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & .header__button {
+    & button {
+      font-size: 0.7rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.profil {
+  font-size: 0.8rem;
+  display: flex;
+  flex-direction: column;
+
+  & .message {
+    color: #F00;
+  }
+
+  &__container {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+
+  &__picture {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+
+    &-img {
+      margin-top: 1rem;
+      width: 130px;
+      border-radius: 50%;
+    }
+
+    & button {
+      width: 100%;
+      font-size: 0.7rem;
+    }
+  }
+
+  &__infos {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    &-buttons {
+      font-size: 0.7rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+
+  input {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+
+    &:focus {
+      outline-color: #2756A2;
+    }
+  }
+}
+
+.inline {
+  width: 300px;
+}
+
+@media (min-width: 480px) and (max-width:991px) {
+  .container__with-editMode {
+
+    & .header__button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    & button {
+      font-size: 0.8rem;
+    }
+  }
+
+  .profil {
+    font-size: 0.9rem;
+
+
+    &__picture {
+      &-img {
+        width: 150px;
+      }
+
+      & button {
+        font-size: 0.8rem;
+      }
+    }
+
+    &__infos {
+
+      &-buttons {
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 1rem;
+      }
+
+      input {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (min-width:992px) {
+  .container__with-editMode {
+    min-width: 95%;
+    position: relative;
+
+    & .header__button {
+      position: absolute;
+      top: 7px;
+      right: 0;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1rem;
+
+      & button {
+        font-size: 1rem;
+        margin-bottom: 0rem;
+      }
+    }
+  }
+
+  .profil {
+    font-size: 1rem;
+    margin-top: 0rem;
+
+    &__container {
+      width: 70%;
+      font-size: 1rem;
+      flex-direction: row;
+      gap: 2rem;
+    }
+
+    .inline {
+      width: 100%;
+    }
+
+    &__picture {
+      padding-top: 0.5rem;
+      width: 30%;
+      height: 305px;
+      display: flex;
+
+      &-img {
+        width: 230px;
+      }
+    }
+
+    &__infos {
+      width: 50%;
+
+      &-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 1rem;
+      }
+
+      input {
+        font-size: 1rem;
+      }
+    }
+  }
+}

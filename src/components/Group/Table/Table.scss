@@ -1,0 +1,73 @@
+@use './../../../styles/variables.scss' as v;
+
+table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  text-align: left;
+
+  &.teacher {
+    border: 3px solid v.$teacher;
+  }
+
+  &.student {
+    border: 3px solid v.$student;
+  }
+
+  & thead {
+    border: none;
+  }
+
+  & th {
+    color: v.$background;
+    font-size: 0.7rem;
+    padding: 0.5rem 1rem;
+    word-break: break-all;
+
+    &.teacher {
+      background-color: v.$teacher;
+      box-shadow: 0 0 5px v.$teacher;
+    }
+
+    &.student {
+      background-color: v.$student;
+      box-shadow: 0 0 5px v.$student;
+    }
+  }
+
+  & .table__th-dashboard:first-of-type {
+    text-align: center;
+  }
+
+  & .table__th-sidebar:first-of-type {
+    text-align: center;
+  }
+
+  & .sidebar td:last-of-type {
+    text-align: right;
+  }
+
+  tr {
+    border: 1px solid v.$secondary;
+  }
+
+  td {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  table {
+    & th {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  table {
+    & th {
+      font-size: 1rem;
+    }
+  }
+}

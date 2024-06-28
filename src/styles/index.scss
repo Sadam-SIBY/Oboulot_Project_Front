@@ -1,0 +1,260 @@
+@use 'reset';
+@use 'fonts';
+@use 'variables' as v;
+
+body {
+  background-color: v.$background;
+  color: v.$text;
+  font-size: 0.9rem;
+  font-family: v.$font-text;
+  font-weight: v.$font-text-weight;
+  text-align: justify;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: v.$secondary;
+  border-radius: 0.5rem;
+}
+
+h1,
+h2 {
+  font-family: v.$font-title;
+  font-weight: v.$font-title-weight;
+}
+
+h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+
+  &.teacher {
+    text-shadow: 0 0 1px v.$teacher;
+  }
+
+  &.teacher {
+    text-shadow: 0 0 1px v.$student;
+  }
+}
+
+h2 {
+  text-align: left;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+a {
+  color: v.$background;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &.teacher:hover {
+    color: v.$accent;
+    text-shadow: 0 0 3px v.$teacher;
+  }
+
+  &.student:hover {
+    color: v.$accent;
+    text-shadow: 0 0 3px v.$student;
+  }
+}
+
+.current {
+  color: v.$secondary;
+}
+
+.color-black {
+  color: v.$text;
+}
+
+.weight-normal {
+  font-weight: v.$font-text-weight;
+}
+
+.weight-bold {
+  font-weight: v.$font-title-weight;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.display-block {
+  display: block;
+}
+
+.margin-top {
+  margin-top: 1rem;
+}
+
+button {
+  border: none;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 2px v.$text;
+  color: v.$background;
+  font-weight: v.$font-title-weight;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: 0.3s;
+
+  &.purple {
+    background: v.$student;
+
+    &:hover {
+      background: rgba(v.$student, 0.8);
+    }
+
+    &:active {
+      background: rgba(v.$student, 1);
+      box-shadow: none;
+    }
+  }
+
+  &.blue {
+    background: v.$teacher;
+
+    &:hover {
+      background: rgba(v.$teacher, 0.8);
+    }
+
+    &:active {
+      background: rgba(v.$teacher, 1);
+      box-shadow: none;
+    }
+  }
+
+  &.green {
+    background: #1d8e3b;
+
+    &:hover {
+      background: rgba(#1d8e3b, 0.8);
+    }
+
+    &:active {
+      background: rgba(#1d8e3b, 1);
+      box-shadow: none;
+    }
+  }
+
+  &.gray {
+    background: v.$secondary;
+
+    &:hover {
+      background: rgba(v.$secondary, 0.8);
+    }
+
+    &:active {
+      background: rgba(v.$secondary, 1);
+      box-shadow: none;
+    }
+  }
+
+  &.red {
+    background: red;
+
+    &:hover {
+      background: rgba(red, 0.5);
+    }
+
+    &:active {
+      background: rgba(red, 1);
+      box-shadow: none;
+    }
+  }
+
+  &.white {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    color: v.$text;
+    font-size: 1.3rem;
+    font-weight: normal;
+    padding: 0 0.5rem;
+  }
+
+  &.button-100 {
+    width: 100%;
+  }
+
+  &.button-margin-top {
+    margin-top: 1rem;
+  }
+
+  &.center {
+    margin-inline: auto;
+  }
+}
+
+main {
+  flex: 1;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .display-block {
+    display: inline-block;
+  }
+}
+
+
+@media (min-width: 992px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  a {
+    color: v.$background;
+    text-decoration: none;
+    transition: 0.3s;
+
+    &:hover {
+      color: v.$secondary;
+      text-shadow: none;
+    }
+  }
+
+  .current {
+    color: v.$secondary;
+  }
+}

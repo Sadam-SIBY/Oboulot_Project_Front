@@ -1,0 +1,323 @@
+@use './../../styles/variables.scss' as v;
+
+/* HEADER & FOOTER */
+
+.header.teacher,
+.footer.teacher {
+  width: 100%;
+  background-color: v.$teacher;
+  box-shadow: 0 0 5px v.$teacher;
+  color: v.$background;
+}
+
+.header.student,
+.footer.student {
+  width: 100%;
+  background-color: v.$student;
+  box-shadow: 0 0 5px v.$student;
+  color: v.$background;
+}
+
+/* FOOTER  */
+
+.footer {
+  font-size: 0.8rem;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  &__quote {
+    text-align: center;
+    line-height: 2;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+/* HEADER  */
+
+.header {
+  height: 80px;
+  padding: 0 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* LOGO + PROJECT NAME  */
+
+  &__project {
+    &-logo {
+      width: 40px;
+    }
+
+    &-name {
+      display: none;
+    }
+  }
+
+  /* BURGER MENU  */
+
+  &__menu-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &__burger,
+    &__burger::before,
+    &__burger::after {
+      width: 100%;
+      height: 3px;
+      background-color: v.$background;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+      transition: all .3s ease-in-out;
+    }
+
+    &__burger::before,
+    &__burger::after {
+      content: '';
+      position: absolute;
+    }
+
+    &__burger::before {
+      transform: translateY(-0.55rem);
+    }
+
+    &__burger::after {
+      transform: translateY(0.55rem);
+    }
+
+    &.open {
+      & .header__menu-button__burger {
+        background: transparent;
+        box-shadow: none;
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  &__menu-content {
+    display: none;
+  }
+
+  /* NAV BAR  */
+
+  &__menu-nav {
+    width: 100%;
+    background-color: v.$secondary;
+    font-size: 0.8rem;
+
+    text-align: center;
+    padding: 2rem 0rem;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    z-index: 99;
+
+    &.visitor {
+      gap: 2rem;
+    }
+
+    & a {
+      color: v.$text;
+
+      &.current.teacher {
+        color: v.$teacher;
+      }
+
+      &.current.student {
+        color: v.$student;
+      }
+    }
+
+    &.open {
+      animation: fadeIn 0.3s forwards ease-in-out;
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      & p {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 576px) {
+  .header__project {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    &-name {
+      display: block;
+      font-family: v.$font-title;
+      font-weight: v.$font-title-weight;
+    }
+  }
+}
+
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .footer {
+    font-size: 1rem;
+  }
+
+  .header__project-name {
+    font-family: v.$font-title;
+    font-size: 1.3rem;
+    font-weight: v.$font-title-weight;
+  }
+
+  .header__menu-nav {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 345px) and (max-width: 767px) {
+
+  .footer__quote-block,
+  .footer__quote-block__author {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer {
+    font-size: 1.1rem;
+
+    .footer__quote-block {
+      display: inline;
+    }
+
+    .footer__quote-block__author {
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .header {
+    height: 90px;
+
+    &__project {
+      &-logo {
+        width: 45px;
+      }
+
+      &-name {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .header__menu-nav {
+    top: 90px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .footer {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+
+    &__menu {
+      flex-direction: row;
+      gap: 3rem;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    height: 100px;
+
+    &__project {
+      &-logo {
+        width: 50px;
+      }
+
+      &-name {
+        font-size: 1.7rem;
+      }
+    }
+
+    /* BURGER MENU  */
+
+    &__menu-button {
+      display: none;
+    }
+
+    &__menu-content {
+      font-size: 1.1rem;
+      display: block;
+
+      & nav {
+        display: flex;
+        gap: 2rem;
+
+        & p {
+          font-style: italic;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+    }
+
+    &__menu-nav {
+      display: none;
+    }
+  }
+}

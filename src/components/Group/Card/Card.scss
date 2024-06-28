@@ -1,0 +1,90 @@
+@use './../../../styles/variables.scss' as v;
+
+.logos {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 99;
+
+  &__container {
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+
+    &-arrow {
+      position: relative;
+
+      &__infos {
+        background-color: v.$secondary;
+        text-align: center;
+        padding: 1rem 3rem;
+        position: absolute;
+        top: 1.2rem;
+        right: -1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        z-index: 99;
+
+        & button.white {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .logos {
+    &__container {
+      &-arrow {
+        &__infos {
+          top: 1.5rem;
+
+          & button.white {
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1199px) {
+  .logos {
+    &__container {
+      &-arrow {
+        position: relative;
+
+        &__infos {
+          top: 1.8rem;
+
+          & button.white {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: 1199px) {
+  .logos__container {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logos__container-arrow {
+    display: none;
+  }
+
+  .logos__container {
+    display: flex;
+    gap: 1rem;
+  }
+}

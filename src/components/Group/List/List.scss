@@ -1,0 +1,45 @@
+@use './../../../styles/variables.scss' as v;
+
+// .filter__list {
+//   margin-bottom: 2rem;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 1rem;
+
+//   & label {
+//     font-size: 0.8rem;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     gap: 1rem;
+
+//     & select {
+//       background-color: transparent;
+//       border: 2px solid v.$text;
+//       box-shadow: 0 0 1px v.$primary;
+//       outline-color: v.$primary;
+//       border-radius: 0.5rem;
+//       padding: 0.25rem 1rem;
+//     }
+//   }
+// }
+
+// @media (min-width: 568) and (max-width: 768px) {
+//   .filter__list {
+//     & label {
+//       font-size: 1rem;
+//     }
+//   }
+// }
+
+// @media (min-width: 768px) {
+//   .filter__list {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-evenly;
+
+//     & label {
+//       font-size: 1.3rem;
+//     }
+//   }
+// }

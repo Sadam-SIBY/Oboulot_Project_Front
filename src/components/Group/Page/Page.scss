@@ -1,0 +1,132 @@
+@use "./../../../styles/variables.scss" as v;
+
+.container__group-list {
+  width: 95%;
+  height: 70px;
+  position: relative;
+
+  & div {
+    width: 250px;
+    box-shadow: 0 0 3px v.$text;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    & h3 {
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+
+    & button {
+      transition: transform 0.3s ease-in-out;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    & .container__group-list__invisible {
+      display: none;
+    }
+
+    & .container__group-list__visible {
+      height: 500px;
+      background-color: v.$secondary;
+      box-shadow: 0 0 3px v.$text;
+      border-radius: 0.3rem;
+      padding: 1rem 2rem;
+      overflow: auto;
+      display: block;
+      transition: transform 0.3s ease-in-out;
+
+      & ul {
+        padding: 1rem;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
+      }
+    }
+
+    .button-right {
+      transform: translateX(0px);
+    }
+
+    .button-left {
+      transform: translateX(-210px);
+    }
+
+    .slide-in-left {
+      animation: slide-in-left 0.3s ease-in-out forwards;
+    }
+
+    @keyframes slide-in-left {
+      0% {
+        opacity: 0;
+        width: 0;
+      }
+
+      100% {
+        opacity: 100%;
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .container__group-list {
+    & div {
+      width: 290px;
+
+      .button-right {
+        transform: translateX(0px);
+      }
+
+      .button-left {
+        transform: translateX(-240px);
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .container__group-list {
+    & div {
+      width: 310px;
+
+      & .container__group-list__visible {
+        height: 370px;
+      }
+
+      .button-right {
+        transform: translateX(0px);
+      }
+
+      .button-left {
+        transform: translateX(-260px);
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container__group-list {
+    & div {
+      width: 400px;
+
+      & .container__group-list__visible {
+        height: 500px;
+      }
+
+      .button-right {
+        transform: translateX(0px);
+      }
+
+      .button-left {
+        transform: translateX(-330px);
+      }
+    }
+  }
+}

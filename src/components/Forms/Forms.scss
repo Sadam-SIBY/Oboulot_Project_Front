@@ -1,0 +1,297 @@
+@use "./../../styles/variables.scss" as v;
+
+.forms {
+  width: 80%;
+  margin: 0 auto;
+
+  & .button-margin-top {
+    margin-top: 2rem;
+  }
+
+  &__div-picture {
+    display: none;
+  }
+}
+
+.forms__container {
+  display: flex;
+  flex-direction: column;
+
+  &-message {
+    font-weight: v.$font-title-weight;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    & p {
+      background-color: rgba($color: #d41515, $alpha: 0.7);
+      box-shadow: 0 0 3px #d41515;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-top: 1rem;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-infos {
+    &.message {
+      background: #1d8e3b50;
+      border: 3px solid #1d8e3b;
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &-section {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  &-instructions {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+
+    & p:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  &-input {
+    &__border {
+      border: 2px solid v.$text;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__border-bottom {
+      border: hidden;
+      border-bottom: 2px solid v.$text;
+      margin-bottom: 1rem;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__checkbox {
+      width: 1rem;
+      height: 1rem;
+      margin-top: 1rem;
+      margin-right: 0.7rem;
+    }
+  }
+
+  &-section {
+    & textarea {
+      height: 100px;
+    }
+  }
+
+  &-message__redirection {
+    margin-top: 1rem;
+  }
+}
+
+.registered {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(black, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.registered__modal {
+  background-color: v.$background;
+  box-shadow: 0 0 5px v.$teacher;
+  border-radius: 0.5rem;
+  padding: 3rem;
+  margin-inline: 2rem;
+  z-index: 999;
+  position: relative;
+
+  & p:first-of-type {
+    font-weight: v.$font-title-weight;
+    margin: 1rem 0 2rem;
+  }
+
+  &-close {
+    background: transparent;
+    padding: 0;
+    color: black;
+    font-size: 2rem;
+    margin: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media (min-width: 576px) {
+  .forms__container {
+    width: 100%;
+    border: 3px solid v.$teacher;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 2px v.$teacher;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &-instructions {
+      font-size: 1.2rem;
+    }
+
+    &-section {
+      font-size: 1.2rem;
+    }
+
+    &-message {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .forms {
+    &.signin {
+      width: 70%;
+    }
+
+    &__container {
+      &-message {
+        font-size: 1rem;
+      }
+
+      &-section__checkbox {
+        font-size: 1rem;
+      }
+
+      &-message__redirection {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .forms {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+
+    &.signin {
+      width: 50%;
+      height: 100%;
+    }
+  }
+
+  .forms__div {
+    width: 50%;
+    display: flex;
+    justify-content: right;
+
+    &-picture {
+      min-height: 100%;
+      border-radius: 0.5rem;
+      display: block;
+    }
+  }
+
+  .forms__container__with-picture {
+    width: 50%;
+  }
+
+  .forms__container {
+    height: 100%;
+    border: 3px solid v.$teacher;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 2px v.$teacher;
+    padding: 2rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0;
+
+    &-message {
+      font-size: 1.1rem;
+    }
+
+    &-section,
+    &-infos {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+
+    &-instructions {
+      margin-bottom: 1rem;
+
+      & p:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    &-input {
+      &__border {
+        border: 2px solid v.$text;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &__border-bottom {
+        border: hidden;
+        border-bottom: 2px solid v.$text;
+        margin-bottom: 1rem;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      &__checkbox {
+        margin-right: 0.7rem;
+      }
+    }
+
+    &-section {
+      & textarea {
+        height: 100px;
+      }
+
+      &__checkbox {
+        font-size: 1.1rem;
+      }
+    }
+
+    &-message__redirection {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+  }
+}

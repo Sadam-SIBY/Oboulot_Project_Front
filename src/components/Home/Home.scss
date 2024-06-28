@@ -1,0 +1,56 @@
+@use '../../styles/variables' as v;
+
+.home {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.home {
+  &__description {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__section {
+    border: 3px solid v.$teacher;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 2px v.$teacher;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    &-title {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    &-text {
+      width: 100%;
+      text-align: left;
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .home {
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+  .home {
+    width: 70%;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .home {
+    width: 60%;
+    font-size: 1rem;
+  }
+}
